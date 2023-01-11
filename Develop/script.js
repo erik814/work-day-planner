@@ -14,15 +14,11 @@ const two = document.getElementById("14");
 const three = document.getElementById("15");
 const four = document.getElementById("16");
 const five = document.getElementById("17");
-const nowTest = document.getElementById("nowTest");
-const futureTest = document.getElementById("futureTest");
 
-let hoursArray = [nine, ten, eleven, twelve, one, two, three, four, five, nowTest, futureTest];
+let hoursArray = [nine, ten, eleven, twelve, one, two, three, four, five];
 
 dateAndTextArray = []
 
-
-console.log(hoursArray[2].children[0])
 
 $(function () {
 
@@ -40,29 +36,43 @@ $(function () {
   }
 
 
-  //Get to do items from local storage
+  //Get to do items from local storage and
 
   var DATAfromStorage = JSON.parse(localStorage.getItem("dateAndText"));
   console.log("Info pulled from storage: ", DATAfromStorage)
 
+  console.log(DATAfromStorage.find(x => x.id === "11"))
+  console.log(DATAfromStorage["text"])
+  
+
+  //document.getElementById("16").children[1].children[0].textContent="dgfhggfhgf"
+  document.getElementById("14").children[1].children[0].textContent= DATAfromStorage[0].text.value
+
+
+  // const findOnject = saveData.find( (obj) => obj.hour === "9") // <---- change 9 to i, use == instead of ===
+  // console.log(saveData.indexOf(9))
 
 
 
-
-  // Key event
-
-  document.body.addEventListener('keydown', function(e){
+  function getText(i){
+    const selectedObject = DATAfromStorage.find( (obj) => obj.hour == "i") // <---- change 9 to i, use == instead of ===
+    return selectedObject?.value || "";   //  <----- ? means IF foundobj exists, do this
     
+  }
+
+  console.log(getText(11))
+  getText()
+
+  // for(i=9; i<18; i++){
+  //   let arrayLoop = DATAfromStorage.find(x => x.id === i)
+  //   console.log(arrayLoop)
+  // }
 
 
-    // if key target is textarea, textarea.textcontent = key value? key pressed
-  })
 
 
 
-
-
-  //Click event
+  //Click event & push to storage  DONE
 
   let saveButtonEl = document.getElementsByClassName("saveButton")
 
@@ -70,26 +80,27 @@ $(function () {
     console.log(e.target)
 
     if(e.target.textContent === "Save"){
-      console.log(e.target.parentElement.parentElement)
-      let targetParent = e.target.parentElement.parentElement;
 
+      let targetParent = e.target.parentElement.parentElement;
+      let textAreaText = targetParent.children[1].children[0].value
+      let targetDate = targetParent.children[0].textContent.trim()
+      let targetID = targetParent.id;
+
+      console.log(targetID);
 
       var dateAndText = {
-        date: targetParent.children[0].textContent.trim(),
-        text: targetParent.children[1].children[0].textContent,
+        date: targetDate,
+        text: textAreaText,
+        id: targetID
       }
 
       dateAndTextArray.push(dateAndText);
       localStorage.setItem("dateAndText", JSON.stringify(dateAndTextArray))
-
-            // add a thing to save textarea textcontent to storage with 
-
-
-
-
     }
   })
 
+
+  // last commit trying to display storage data
 
 
 
