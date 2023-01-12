@@ -14,13 +14,13 @@ The gray, green, or blue section can be clicked, and "to do" items can be typed 
 
 Here is a screenshot of the webpage:
 
-![Screenshot](./assets/Screenshot%20(7).png)
+![Screenshot](./Assets/Screenshot%20(8).png)
 
 
 ## Tasks
 
-For this project, I was given some starter HTML and CSS. I worked in the HTML to update the structure of the page, specifically adding my hour blocks. 
+For this project, I was given some starter HTML and CSS. I worked in the HTML to update the structure of the page, specifically adding my hour blocks. I did some work in CSS as well using bootstrap to add rows and columns, and a little bit of a more polished look. Most of my work was in javascript. Getting the color of the hour blocks to change with the time was really quick and easy, as was saving information to and pulling from the local storage. The part I struggled with the most was getting the information pulled from local storage to display in the correct hour block.
 
 ## What I Learned
 
-One of the biggest things I learned with this project was how much the difficulty of a project can scale depending on size. Writing a few functions and getting everything to work is pretty easy. But when you have a lot of functions and data moving around, it can be incredibly easy to get lost or overwhelmed. One thing that really helped me was to draw the process out on a notebook.
+On this project, I learned a lot about working with arrays of objects and loops. I also finally started trying to use some jQuery and arrow functions. They still feel unfamiliar to me, but I'm going to continue practing them.
