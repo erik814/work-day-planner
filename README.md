@@ -1,100 +1,26 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# Work Day Planner
 
-## Your Task
+## Description
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+This is an interactive work day planner.
 
-You'll need to use the [Day.js](https://day.js.org/en/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Day.js in the browser.
-use momentjs instead of day js    momentjs.com   <---- gary will post link is resources channel, paste in as a script tag load it as the first javascript file
+When you open up the page, you will be shown the current date, aswell as a section for each hour from 9am to 5pm.
 
-## User Story
+As the time changes, so does the planner. Hours that have already passed will appear gray. The current hour will appear green. Future hours will appear blue.
 
-```md
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
+The gray, green, or blue section can be clicked, and "to do" items can be typed into that space. After you type in the content, you can click the blue save button to the right to save your text to the local storage. If you refresh the page or reopen it later, your "to do" tasks will still appear in the text box.
 
-## Acceptance Criteria
+[This is a link to the working webpage](https://erik814.github.io/work-day-planner/)
 
-```md
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
+Here is a screenshot of the webpage:
 
-The following animation demonstrates the application functionality:
+![Screenshot](./assets/Screenshot%20(7).png)
 
-<!-- @TODO: create ticket to review/update image) -->
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
 
-## Grading Requirements
+## Tasks
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+For this project, I was given some starter HTML and CSS. I worked in the HTML to update the structure of the page, specifically adding my hour blocks. 
 
-This Challenge is graded based on the following criteria:
+## What I Learned
 
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria plus the following:
-
-  * Uses a date utility library to work with date and time
-
-### Deployment: 32%
-
-* Application deployed at live URL
-
-* Application loads with no errors
-
-* Application GitHub URL submitted
-
-* GitHub repo contains application code
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the Challenge instructions
-
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
-- - -
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+One of the biggest things I learned with this project was how much the difficulty of a project can scale depending on size. Writing a few functions and getting everything to work is pretty easy. But when you have a lot of functions and data moving around, it can be incredibly easy to get lost or overwhelmed. One thing that really helped me was to draw the process out on a notebook.
