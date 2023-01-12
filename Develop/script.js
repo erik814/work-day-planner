@@ -19,6 +19,7 @@ let hoursArray = [nine, ten, eleven, twelve, one, two, three, four, five];
 
 dateAndTextArray = []
 
+console.log(hoursArray[2].children[0].textContent)
 
 $(function () {
 
@@ -27,10 +28,11 @@ $(function () {
   //Loop to change color of current hour
 
   for(var i=0; i < hoursArray.length; i++){
-
-    if(hoursArray[i].children[0].textContent.trim() === moment().format('ha') ){
+    console.log(hoursArray[i].getAttribute("id"))
+    console.log(moment().hour())
+    if(parseInt(hoursArray[i].getAttribute("id")) === moment().hour() ){
       hoursArray[i].children[1].children[0].className="currentHour";
-    }else if(hoursArray[i].id > rightNow){
+    }else if(parseInt(hoursArray[i].getAttribute("id")) > moment().hour()){
       hoursArray[i].children[1].children[0].className="futureHours";
     }
   }
@@ -41,12 +43,34 @@ $(function () {
   var DATAfromStorage = JSON.parse(localStorage.getItem("dateAndText"));
   console.log("Info pulled from storage: ", DATAfromStorage)
 
-  console.log(DATAfromStorage.find(x => x.id === "11"))
-  console.log(DATAfromStorage["text"])
+  // console.log(DATAfromStorage.find(x => x.id === "11"))
+  console.log(DATAfromStorage)
   
+  if(DATAfromStorage !== null){
+    
+    for(i=9; i<18; i++){
+      // console.log(DATAfromStorage[i-9]?.id)
+      var idFromLocalStorage = DATAfromStorage[i-9]?.id;
+      var obj = DATAfromStorage.find( x => x.id === idFromLocalStorage)
+        if(idFromLocalStorage){
+          console.log(idFromLocalStorage)
+          if(parseInt(idFromLocalStorage) < 12){
+            console.log(obj)
+            document.getElementById(`${idFromLocalStorage}am`).textContent = obj.text;
+          }else{
+            document.getElementById(`${idFromLocalStorage}pm`).textContent = obj.text;
+          }
+          // document.getElementById()
+        }
+  
+      }
+  }
+
+
+
+
 
   //document.getElementById("16").children[1].children[0].textContent="dgfhggfhgf"
-  document.getElementById("14").children[1].children[0].textContent= DATAfromStorage[0].text.value
 
 
   // const findOnject = saveData.find( (obj) => obj.hour === "9") // <---- change 9 to i, use == instead of ===
@@ -54,14 +78,12 @@ $(function () {
 
 
 
-  function getText(i){
-    const selectedObject = DATAfromStorage.find( (obj) => obj.hour == "i") // <---- change 9 to i, use == instead of ===
-    return selectedObject?.value || "";   //  <----- ? means IF foundobj exists, do this
-    
-  }
+  // function getText(i){
+  //   const selectedObject = DATAfromStorage.find( (obj) => obj.hour == "i") // <---- change 9 to i, use == instead of ===
+  //   return selectedObject?.value || "";   //  <----- ? means IF foundobj exists, do this
+  // }
 
-  console.log(getText(11))
-  getText()
+  // document.getElementById('11').children[1].children[0].textContent= DATAfromStorage[1].text
 
   // for(i=9; i<18; i++){
   //   let arrayLoop = DATAfromStorage.find(x => x.id === i)
